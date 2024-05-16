@@ -12,5 +12,6 @@ M.ui = {
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
+M.plugins = "custom.plugins"
 
 return M
