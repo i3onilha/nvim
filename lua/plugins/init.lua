@@ -22,6 +22,20 @@ return {
 	    require "configs.lspconfig"
 	  end,
 	},
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function ()
+      require("copilot_cmp").setup()
+    end
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+  }
 
 	-- These are some examples, uncomment them if you want to see them work!
 	--
