@@ -71,11 +71,23 @@ function SelectBlock()
     vim.cmd([[normal! %]])
 end
 
--- CoC Actions
-map('n', 'gd', ':call CocAction(\'jumpDefinition\', \'vsplit\')<CR>', default_opts)
-map('n', 'GD', ':call CocAction(\'jumpDefinition\', \'split\')<CR>', default_opts)
-map('n', 'gt', ':call CocAction(\'jumpDefinition\', \'tabe\')<CR>', default_opts)
-map('n', 'ge', ':call CocAction(\'jumpDefinition\', \'e\')<CR>', default_opts)
+-- Go definition
+map('n', 'ge', ':lua GoDefinition("e")<CR>', default_opts)
+function GoDefinition(split_cmd)
+  local params = vim.lsp.util.make_position_params()
+  vim.lsp.buf_request(0, 'textDocument/definition', params, function(err, result, ctx, _)
+    if err or result == nil or vim.tbl_isempty(result) then
+      print("Definition not found")
+      return
+    end
+
+    if vim.tbl_islist(result) then
+      vim.lsp.util.jump_to_location(result[1], split_cmd == 'split' and 'split' or nil)
+    else
+      vim.lsp.util.jump_to_location(result, split_cmd == 'split' and 'split' or nil)
+    end
+  end)
+end
 
 -- Others
 map('n', 'cp', ':Copilot suggestion<CR>')
