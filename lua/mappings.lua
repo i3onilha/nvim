@@ -28,5 +28,11 @@ map('n', 'pt', '<cmd>Telescope help_tags<CR>', default_opts)
 map('n', 'so', ':so ~/.config/nvim/lua/mappings.lua<CR>', default_opts)
 map('n', 'em', ':e ~/.config/nvim/lua/mappings.lua<CR>', default_opts)
 map('n', 'cp', ':Copilot suggestion<CR>', default_opts)
+map('n', '<C-\\>', ':lua SelectBlock()<CR>', default_opts)
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <CR>")
+function SelectBlock()
+    vim.cmd([[normal! V]])
+    vim.cmd([[normal! $]])
+    vim.cmd([[normal! %]])
+end
+
