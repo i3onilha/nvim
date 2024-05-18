@@ -5,7 +5,10 @@
 local M = {}
 
 M.ui = {
-	theme = "onedark",
+	theme = "material-darker",
+  statusline = {
+    separator_style = "block",
+  },
   hl_override = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
