@@ -23,3 +23,6 @@ autocmd("BufWritePre", {
     vim.lsp.buf.format { async = false }
   end,
 })
+vim.cmd([[
+    autocmd BufEnter * :Copilot suggestion
+]])
