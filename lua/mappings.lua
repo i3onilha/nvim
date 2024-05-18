@@ -78,7 +78,6 @@ function GoDefinition(split_cmd)
       print("Definition not found")
       return
     end
-
     if vim.tbl_islist(result) then
       vim.lsp.util.jump_to_location(result[1], split_cmd == 'split' and 'split' or nil)
     else
