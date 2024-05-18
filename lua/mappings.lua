@@ -34,6 +34,7 @@ map('n', 'Q', ':q<CR>', default_opts)
 map('n', 'so', ':so ~/.config/nvim/lua/mappings.lua<CR>', default_opts)
 map('n', 'em', ':e ~/.config/nvim/lua/mappings.lua<CR>', default_opts)
 map('n', 'et', ':e ~/.config/nvim/lua/chadrc.lua<CR>', default_opts)
+map('n', 'eo', ':e ~/.config/nvim/lua/options.lua<CR>', default_opts)
 map('n', 'sp', ':vsplit<CR>', default_opts)
 map('n', 'sP', ':split<CR>', default_opts)
 map('n', 'SP', ':split<CR>', default_opts)
@@ -74,7 +75,7 @@ end
 map('n', 'ge', ':lua GoDefinition("e")<CR>', default_opts)
 function GoDefinition(split_cmd)
   local params = vim.lsp.util.make_position_params()
-  vim.lsp.buf_request(0, 'textDocument/definition', params, function(err, result, ctx, _)
+  vim.lsp.buf_request(0, 'textDocument/definition', params, function(err, result)
     if err or result == nil or vim.tbl_isempty(result) then
       print("Definition not found")
       return
