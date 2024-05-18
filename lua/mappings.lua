@@ -59,8 +59,6 @@ map('n', 'gc', ':!git ci -m "', default_opts)
 -- Telescope commands
 map('n', '<C-p>', '<cmd>Telescope find_files<CR>', default_opts)
 map('n', '<C-g>', '<cmd>Telescope live_grep<CR>', default_opts)
-map('n', 'pb', '<cmd>Telescope buffers<CR>', default_opts)
-map('n', 'pt', '<cmd>Telescope help_tags<CR>', default_opts)
 
 -- Select block commands
 map('n', '<C-\\>', ':lua SelectBlock()<CR>', default_opts)
