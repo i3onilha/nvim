@@ -5,7 +5,7 @@
 local M = {}
 
 M.ui = {
-	theme = "material-darker",
+	theme = "mito-laser",
   statusline = {
     separator_style = "block",
   },

@@ -33,6 +33,7 @@ map('n', 'Q', ':q<CR>', default_opts)
 -- Source, Split, Tab and Buffer Commands
 map('n', 'so', ':so ~/.config/nvim/lua/mappings.lua<CR>', default_opts)
 map('n', 'em', ':e ~/.config/nvim/lua/mappings.lua<CR>', default_opts)
+map('n', 'et', ':e ~/.config/nvim/lua/chadrc.lua<CR>', default_opts)
 map('n', 'sp', ':vsplit<CR>', default_opts)
 map('n', 'sP', ':split<CR>', default_opts)
 map('n', 'SP', ':split<CR>', default_opts)
