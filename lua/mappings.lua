@@ -53,7 +53,7 @@ map('n', 'se', ':e %<CR>', default_opts)
 map('n', 'sf', ':e %<CR>', default_opts)
 
 -- Git Commands
-map('n', 'ga', ':!git a %<CR>', default_opts)
+map('n', 'ga', ':!git a %<CR><ESC>', default_opts)
 map('n', 'GA', ':!git a .<CR>', default_opts)
 map('n', 'gs', ':!git st<CR>', default_opts)
 map('n', 'gc', ':!git ci -m "', default_opts)
