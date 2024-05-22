@@ -26,3 +26,10 @@ autocmd("BufWritePre", {
 vim.cmd([[
     autocmd BufEnter * :Copilot suggestion
 ]])
+vim.cmd([[
+  augroup TrimWhitespace
+    autocmd!
+    autocmd BufWritePre * %s/\s\+$//e
+  augroup END
+]])
+
