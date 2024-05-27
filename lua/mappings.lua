@@ -91,3 +91,18 @@ end
 -- Others
 map('n', 'cp', ':Copilot suggestion<CR>')
 map('n', 'e', ':e<CR>', default_opts)
+map('n', 'ln', ':lua Toggle_line_numbers_and_sign_column()<CR>', default_opts)
+
+function Toggle_line_numbers_and_sign_column()
+	if vim.o.number then
+		-- If line numbers are currently enabled, disable them and the sign column
+		vim.o.number = false
+		vim.o.relativenumber = false
+		vim.o.signcolumn = "no"
+	else
+		-- If line numbers are currently disabled, enable them and the sign column
+		vim.o.number = true
+		vim.o.relativenumber = true
+		vim.o.signcolumn = "yes"
+	end
+end
