@@ -15,23 +15,28 @@ opt.expandtab = false
 opt.shiftwidth = 4
 opt.tabstop = 4
 opt.softtabstop = 4
+opt.background = "dark"
 
 local autocmd = vim.api.nvim_create_autocmd
+local cmd = vim.cmd
+local api = vim .api
+api.nvim_set_hl(0, "Comment", { fg = "#7CFC00", italic = true })
 autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
     vim.lsp.buf.format { async = false }
   end,
 })
-vim.cmd([[
+cmd([[
     autocmd BufEnter * :Copilot suggestion
 ]])
-vim.cmd([[
+cmd([[
   augroup TrimWhitespace
     autocmd!
     autocmd BufWritePre * %s/\s\+$//e
   augroup END
 ]])
+cmd("colorscheme desert")
 
 
 -- add yours here!
