@@ -51,5 +51,11 @@ return {
 			},
 		},
 	},
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		config = function()
+			require("plugins.extras") -- Adjust to the correct path if necessary
+		end,
+	},
 }
 
