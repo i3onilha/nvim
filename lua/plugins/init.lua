@@ -56,6 +56,12 @@ return {
 		config = function()
 			require("plugins.extras") -- Adjust to the correct path if necessary
 		end,
+
+	},
+	{
+		"fatih/vim-go",
+		build = ":GoUpdateBinaries",
+		lazy = false, -- Load on startup
 	},
 }
 
