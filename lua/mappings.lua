@@ -30,9 +30,9 @@ map('n', '<M-h>', ':tabprevious<CR>', default_opts)
 map('n', '<M-l>', ':tabnext<CR>', default_opts)
 
 -- Function Keys Mappings
-map('n', '<F4>', ':go fmt %<CR>', default_opts)
-map('n', '<F8>', ':go run %<CR>', default_opts)
-map('n', '<F9>', ':go run .<CR>', default_opts)
+map('n', '<F4>', ':!go fmt %<CR>', default_opts)
+map('n', '<F8>', ':!go run %<CR>', default_opts)
+map('n', '<F9>', ':!go run .<CR>', default_opts)
 map('n', 'Q', ':q<CR>', default_opts)
 
 -- Source, Split, Tab and Buffer Commands
