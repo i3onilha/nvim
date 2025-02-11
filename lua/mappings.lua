@@ -4,7 +4,9 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 vim.g.go_debug_windows = {
-    vars = "botright vnew"
+    vars = "botright vnew",
+	goroutines = "botright 9new",
+	stack = "aboveleft 6new"
 }
 local default_opts = { noremap = true, silent = true }
 
