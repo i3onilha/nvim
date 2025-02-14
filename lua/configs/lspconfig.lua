@@ -42,3 +42,14 @@ lspconfig.gopls.setup {
   },
 }
 
+lspconfig.intelephense.setup({
+	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	settings = {
+		intelephense = {
+			stubs = { "bcmath", "bz2", "Core", "curl", "date", "dom", "fileinfo", "filter", "gd", "hash", "iconv", "json", "libxml", "mbstring", "mcrypt", "mysql", "mysqli", "pcre", "PDO", "pdo_mysql", "Phar", "posix", "readline", "Reflection", "session", "SimpleXML", "sockets", "SPL", "standard", "superglobals", "tokenizer", "xml", "xmlreader", "xmlwriter", "zip", "zlib" },
+			files = {
+				maxSize = 5000000,
+			},
+		},
+	},
+})
