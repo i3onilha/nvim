@@ -36,7 +36,7 @@ return {
 			require("copilot").setup({
 				suggestion = {
 					keymap = {
-						accept = "<Tab>",
+						accept = "<M-a>",
 					},
 				},
 			})
