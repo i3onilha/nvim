@@ -5,7 +5,6 @@ o.cursorlineopt = 'both'
 
 local opt = vim.opt
 opt.encoding = "utf-8"
-opt.fileencoding = "utf-8"
 opt.backup = false
 opt.swapfile = false
 opt.scrolloff = 10
@@ -36,7 +35,6 @@ cmd([[
     autocmd BufWritePre * %s/\s\+$//e
   augroup END
 ]])
-cmd("colorscheme desert")
 autocmd("FileType", {
   pattern = "javascript",
   callback = function()
